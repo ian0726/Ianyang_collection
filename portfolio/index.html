@@ -9,6 +9,53 @@
     <title>Yi-Hen (Ian) Yang | Business Analytics & Systems</title>
     <script type="module" crossorigin src="./assets/index-Ba-jPRcP.js?v=18a64e1"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-C3i_tTb6.css">
+    <style>
+      /* Expanded project lists can exceed the observer threshold. Show them immediately. */
+      #projects .reveal-item,
+      .project-accordion-list {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+        transition: none !important;
+        animation: none !important;
+        will-change: auto;
+      }
+      .project-card .accordion-content,
+      .project-card .project-expanded {
+        transition: none !important;
+        animation: none !important;
+        transform: none !important;
+      }
+      /* Keep the large body heading, without repeating its summary in the open header. */
+      .experience-card.open .collapsed-impact,
+      .project-card.open .collapsed-impact {
+        display: none;
+      }
+      .experience-card.open .accordion-trigger {
+        grid-template-columns: 45px 170px minmax(230px, 1fr) 40px;
+      }
+      .project-card.open .project-trigger {
+        grid-template-columns: 45px minmax(0, 1fr) 40px;
+      }
+      .experience-card.open .expand-icon,
+      .project-card.open .expand-icon {
+        grid-column: -2 / -1;
+      }
+      @media (max-width: 900px) {
+        .experience-card.open .accordion-trigger {
+          grid-template-columns: 36px 140px 1fr 38px;
+        }
+        .project-card.open .project-trigger {
+          grid-template-columns: 36px 1fr 38px;
+        }
+      }
+      @media (max-width: 620px) {
+        .experience-card.open .accordion-trigger,
+        .project-card.open .project-trigger {
+          grid-template-columns: 30px minmax(0, 1fr) 35px;
+        }
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
